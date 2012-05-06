@@ -1,73 +1,45 @@
 <!DOCTYPE html>
 <html>
 <!--
-    davidhuerta.me
-    attention whoring
-    webmaster david{at}hayst.ac
-    http://www.davidhuerta.me
     copyright (c) 2011 David Huerta. Distributed under the CDL license: http://supertunaman.com/cdl/
 -->
 <head>
-    <title>davidhuerta.me</title>
+    <title>jacobrosenthal.com</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <link rel="StyleSheet" href="default.css" type="text/css" />
     <link rel="StyleSheet" href="overflow-touch.css" type="text/css" />
     <script type="text/javascript" src="overflow-touch.js"></script>
+	<script src="js/patternizer.min.js"></script>
+	<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+
 </head>
 <body>
+	
+	<canvas id="bgCanvas"></canvas>
+
+	<div class="wrapper">
+	    <div class="content-wrapper">
     <?php include("header.php"); ?>
     <div class="contentContainer">
         <?php include("navigation.php"); ?>
         <article id="verbageContainer" class="descriptionContainer">
-            <h2>speaking experience</h2>
-			<h3>Art Hacks Everywhere, 28C3; Berlin, Germany - (Dec 2011)</h3>
-			<p>Lightning talk on Art Hack Day and why it's totally rad</p>
+            <h2>speaking</h2>
+			<h3>3D Printing, UAT; Tempe, Arizona - (Dec 2011)</h3>
+			<p>UAT asked HeatSync to talk about the state of Additive Manufacturing and our Fakerbot.</p>
 			<ul>
-				<li><a href="presentations/arthackseverywhere_28c3.pdf">Slides (PDF)</a></li>
-				<li><a href="http://www.youtube.com/watch?v=QCjFSDir6Xg">Video</a></li>
+				<li><a href="presentations/3dprinting-uat.pdf">Slides (PDF)</a></li>
+				<li><a href="http://www.youtube.com/watch?feature=player_embedded&v=WJ02eSfGmMQ">Video</a></li>
 			</ul>
-            <h3>Hacking Hardware: Fun with Twilio and Arduino, Twilio Conference; San Francisco, California - (Sep 2011)</h3>
-            <p>Demonstrated the use of Twilio with a DIY Ardunio-based hardware interface</p>
+			<h2>publications</h2>
+            <h3>A Pragmatic Approach to the Design and Implementation of a Vibrotactile Belt and its Applications, IEEE International Workshop on Haptic Audio Visual Environments and Games - (2009)</h3>
+            <p>Workshop paper on preliminary progress of our Haptic Belt interface designed at ASU's CUbiC lab. We developed a wired tactor system utilizing the i2c interface to send vibration patterns, rhythm and magnitude, which when combined with location also allows for spatiotemporal rhythms, to up to 16 tactors.</p>
             <ul>
-                <li><a href="presentations/arduino_twiliocon.pdf">Slides (PDF)</a></li>
-                <li><a href="http://vimeo.com/31400665">Video</a></li>
+                <li><a href="presentations/HAVE_2009.pdf">Final Paper (PDF)</a></li>
             </ul>
-            <h3>Hackerspaces as Innovation Incubators, ABLEconf; Tempe, Arizona - (Apr 2011)</h3>
-            <p>Discussed hackerspaces as ideal environments for innovation due to being less restrictive than formal research institutions</p>
+            <h3>Design, Implementation, and Case Study of a Pragmatic Vibrotactile Belt, IEEE Transactions On Instrumentation and Measurement, Vol. 60, No. 1 - (Jan 2011)</h3>
+            <p>After our initial paper we were invited to expand our work into a full journal article.</p>
             <ul>
-                <li><a href="presentations/hackerspaces_ableconf.pdf">Slides (PDF)</a></li>
-                <li>Video (Coming not very soon or quickly it seems)</li>
-            </ul>
-            <h3>loldialer, HeatSync Labs; Chandler, Arizona - (Nov 2010)</h3>
-            <p>Discussed the use of Arduino, Ruby, and Twilio for trolling applications</p>
-            <ul>
-                <li><a href="presentations/loldialer_heatsynclabs.pdf">Slides (PDF)</a></li>
-            </ul>
-            <h3>Hayst.ac Lightning Talk, The Next HOPE; New York, New York - (Jul 2010)</h3>
-            <p>Eight minute lightning talk introducing Hayst.ac to New York hackers</p>
-            <ul>
-                <li><a href="presentations/haystac_thenexthope.pdf">Slides (PDF)</a></li>
-            </ul>
-            <h3>Obfuscating Your Search History Panel with TrackMeNot and Hayst.ac, ACM Computers Freedom and Privacy Conference; San Jose, California - (Jun 2010)</h3>
-            <p>Panel discussion on search engine privacy and search history obfuscation with Vincent Toubiana from TrackMeNot and I</p>
-            <ul>
-                <li><a href="presentations/haystac_cfp.pdf">Slides (PDF)</a></li>
-                <li><a href="http://vimeo.com/12782473">Video</a></li>
-            </ul>
-            <h3>My Social Network Can Beat Up Your Social Network, ABLEconf; Tempe, Arizona - (Nov 2009)</h3>
-            <p>Overview and comparison of Identi.ca/StatusNet and that other microblogging system</p>
-            <ul>
-                <li><a href="presentations/identica_ableconf.pdf">Slides (PDF)</a></li>
-            </ul>
-            <h3>Search Privacy Through Obfuscation: Introducing Hayst.ac, Toorcamp; Titan 1 Missile Silo, Washington - (Jul 2009)</h3>
-            <p>Introduction to Hayst.ac and search history obfuscation, featuring forensics bingo and Oxy-Clean prizes</p>
-            <ul>
-                <li><a href="presentations/haystac_toorcamp.pdf">Slides (PDF)</a></li>
-            </ul>
-            <h3>Introduction to the GP2X, ABLEconf; Tempe, Arizona - (Sep 2009)</h3>
-            <p>An overview of the GNU/Linux-powered GP2X portable gaming platform and various open source projects that have sprung up around it</p>
-            <ul>
-                <li><a href="presentations/gp2x_ableconf.pdf">Slides (PDF)</a></li>
+                <li><a href="presentations/Rosenthal_TIM_2011.pdf">Final Paper (PDF)</a></li>
             </ul>
         </article>
         <script type="text/javascript">
@@ -76,6 +48,68 @@
         <?php include("props.php"); ?>
     </div>
     <?php include("footer.php"); ?>
-    <?php include("woopra.php"); ?>
+   </div>
+   </div>
+<script>
+
+var bgCanvas = document.getElementById('bgCanvas');
+
+function render() {
+
+    bgCanvas.patternizer({
+	stripes : [ 
+	    {
+	        color: '#230423',
+	        rotation: 5,
+	        opacity: 60,
+	        mode: 'normal',
+	        width: 48,
+	        gap: 44,
+	        offset: 7
+	    },
+	    {
+	        color: '#444444',
+	        rotation: 200,
+	        opacity: 50,
+	        mode: 'normal',
+	        width: 20,
+	        gap: 16,
+	        offset: 0
+	    }
+	],
+	bg : '#000000'
+	});
+
+}
+
+// resize the canvas to the window size
+function onResize() {
+
+    // number of pixels of extra canvas drawn
+    var buffer = 100;
+
+    // if extra canvas size is less than the buffer amount
+    if (bgCanvas.width - window.innerWidth < buffer ||
+        bgCanvas.height - window.innerHeight < buffer) {
+
+        // resize the canvas to window plus double the buffer
+        bgCanvas.width = window.innerWidth + (buffer * 2);
+    	bgCanvas.height = window.innerHeight + (buffer * 2);
+
+    	render();
+    }	
+
+}
+
+function init() {
+    onResize();
+    // create a listener for resize
+    // cowboy's throttle plugin keeps this event from running hog wild
+    window.addEventListener('resize', Cowboy.throttle(200, onResize), false);
+}
+
+init();
+
+</script>
 </body>
 </html>

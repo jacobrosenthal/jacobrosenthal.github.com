@@ -1,59 +1,42 @@
 <!DOCTYPE html>
 <html>
 <!--
-    davidhuerta.me
-    volunteer slaving
-    webmaster david{at}hayst.ac
-    http://www.davidhuerta.me
     copyright (c) 2011 David Huerta. Distributed under the CDL license: http://supertunaman.com/cdl/
 -->
 <head>
-    <title>davidhuerta.me</title>
+    <title>jacobrosenthal.com</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <link rel="StyleSheet" href="default.css" type="text/css" />
     <link rel="StyleSheet" href="overflow-touch.css" type="text/css" />
     <script type="text/javascript" src="overflow-touch.js"></script>
+	<script src="js/patternizer.min.js"></script>
+	<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+
 </head>
 <body>
+	
+	<canvas id="bgCanvas"></canvas>
+
+	<div class="wrapper">
+	    <div class="content-wrapper">
     <?php include("header.php"); ?>
     <div class="contentContainer">
         <?php include("navigation.php"); ?>
         <article id="verbageContainer" class="descriptionContainer">
             <h2>volunteer experience</h2>
-			<h3>Co-organizer, Art Hack Day; New York, New York (2011 - Now)</h3>
-			<ul>
-				<li>Consulted with network experts to design and implement a fast, reliable network for the 319 Scholes gallery space</li>
-				<li>Negotiated with sponsors to help finance or otherwise support the event and prove their coolness to the NYC art community</li>
-				<li>Drawing owls</li>
-			</ul>
-            <h3>Editor, HeatSync Labs; Chandler, Arizona - (2009-2011)</h3>
+            <h3>Workshops and meetups</h3>
             <ul>
-                <li>Wrote bylaws/charter for the newly formed HeatSync Labs hackerspace</li>
-                <li>Wrote blog posts on upcoming HeatSync Labs events, news, and interviews with local makers, some of which have been syndicated by Make: blog and other online outlets</li>
-                <li>Visited other hackerspaces and hacker/maker events in outreach efforts to share ideas and experiences with the very new phenomenon of the modern hackerspace</li>
-                <li>Designed the layout of the commons area of the space in Mesa now known as "Kipp Hall" and solicited for and collected corporate donations to furnish it</li>
+				<li>Over the past two years I've run weekly and monthly workshops and meetups on 3d printing and microcontrollers. I've mainly focused around the Atmel platform and Arduino in both free monthly meet-ups at HeatSync Labs and for-fee at Urban Stew workshops.</li>
             </ul>
-            <h3>Director of Marketing, ABLEconf; Tempe, Arizona - (2009)</h3>
+            <h3>Young Makers</h3>
             <ul>
-                <li>Created ABLEconf logo and modified it to comply with IP law</li>
-                <li>Designed all ABLEconf shwag, including t-shirts and buttons</li>
-                <li>Wrote press releases for major conference announcements</li>
-                <li>Used social media outlets to keep in touch with our attendees, speakers, and the Free/open-source community as a whole</li>
+                <li>Young Makers is our free form workshop night for passionate kids.  We work with driven young people to empower them to turn their ideas into reality.  No babysitting.  No lectures. This is discovery learning and creation.</li>
             </ul>
-            <h3>Chair, IEEE Computer Society - DeVry Student Branch; Phoenix, Arizona - (2005-2006)</h3>
+            <h3>FIRST Lego League</h3>
             <ul>
-                <li>Re-established the IEEE Computer Society student branch at DeVry University, cutting through both DeVry and IEEE paperwork and red tape like a boss</li>
-                <li>Held monthly meetings with engineers and entrepreneurs from local industry</li>
+                <li>I Mentored FIRST Lego Robotics team applying discovery learning and agile methodology to teach STEM fundamentals to 9–14 year olds. I was Awarded Best Mentor award during 2010 Chandler Arizona Regional competition.
+				</li>
             </ul>
-            <h3>Founder/President, DeLUG; Phoenix, Arizona - (2003-2005)</h3>
-            <ul>
-                <li>Organized bi-monthly meetings on Linux and open-source related topics</li>
-                <li>Spoke and presented on various open-source technologies and projects</li>
-                <li>Created promotional materials, membership packages, and organized promotional and fund-raising events</li>
-                <li>Collaborated with other local technology groups in organizing joint meetings and events</li>
-            </ul>
-            <!--<h2>tl;dr</h2>
-            <p>I am an active member of many geek circles and am almost <a href="http://scottpilgrim.wikia.com/wiki/Michael_Comeau" target="_new">that guy from Scott Pilgrim who knows everyone</a>.</p>-->
         </article>
         <script type="text/javascript">
             setIosOverlay('verbageContainer');
@@ -61,6 +44,68 @@
         <?php include("props.php"); ?>
     </div>
     <?php include("footer.php"); ?>
-    <?php include("woopra.php"); ?>
+   </div>
+   </div>
+<script>
+
+var bgCanvas = document.getElementById('bgCanvas');
+
+function render() {
+
+    bgCanvas.patternizer({
+	stripes : [ 
+	    {
+	        color: '#230423',
+	        rotation: 5,
+	        opacity: 60,
+	        mode: 'normal',
+	        width: 48,
+	        gap: 44,
+	        offset: 7
+	    },
+	    {
+	        color: '#444444',
+	        rotation: 200,
+	        opacity: 50,
+	        mode: 'normal',
+	        width: 20,
+	        gap: 16,
+	        offset: 0
+	    }
+	],
+	bg : '#000000'
+	});
+
+}
+
+// resize the canvas to the window size
+function onResize() {
+
+    // number of pixels of extra canvas drawn
+    var buffer = 100;
+
+    // if extra canvas size is less than the buffer amount
+    if (bgCanvas.width - window.innerWidth < buffer ||
+        bgCanvas.height - window.innerHeight < buffer) {
+
+        // resize the canvas to window plus double the buffer
+        bgCanvas.width = window.innerWidth + (buffer * 2);
+    	bgCanvas.height = window.innerHeight + (buffer * 2);
+
+    	render();
+    }	
+
+}
+
+function init() {
+    onResize();
+    // create a listener for resize
+    // cowboy's throttle plugin keeps this event from running hog wild
+    window.addEventListener('resize', Cowboy.throttle(200, onResize), false);
+}
+
+init();
+
+</script>	
 </body>
 </html>

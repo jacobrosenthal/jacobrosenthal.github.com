@@ -4,13 +4,9 @@
 
 body 
 {
-    background-color:#AF9879;
-    /*background-image: -moz-linear-gradient(bottom, #FFF, #EEE);
-    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #FFF),color-stop(1, #EEE));*/
-	background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
     font-family:Helvetica, Arial, Sans;
     text-align:center;
-    margin: 0 auto;
+    margin: 0;
     width:800px;
     height:100%;
 }
@@ -53,7 +49,7 @@ header h1 a
 
 .contentContainer
 {
-    background-image:url('images/davidhuerta_bg.jpg');
+    background:#000000 url('images/davidhuerta_bg2_800.jpg') no-repeat center top;
     width:800px;
     height:535px;
     display:block;
@@ -65,7 +61,7 @@ header h1 a
 
 .descriptionContainer
 {
-    background-color:#000;
+
     color:#FFF;
     margin-top:20px;
     margin-right:20px;
@@ -255,3 +251,23 @@ header h1 a
 #bluemask {background:#4195aa}
 #frameless {padding:0}
 #frameless .tclose {left:6px}
+
+/*patternizer css*/
+
+/* required */ 
+#bgCanvas {
+    position: fixed;
+}
+
+/* required */
+.wrapper {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+/* customize to your page design */
+.content-wrapper {
+    width: 800px;
+   margin: 0 auto;
+}

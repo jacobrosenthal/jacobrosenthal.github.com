@@ -25,27 +25,19 @@
 </script>
 
 <nav class="mainNavContainer">
-    <a href="volunteerism.php">&nbsp;david volunteers&nbsp;</a>
+    <a href="volunteerism.php">&nbsp;jacob volunteers&nbsp;</a>
     <br />
     <br />
-    <a href="resume.php">&nbsp;david works&nbsp;</a>
+    <a href="resume.php">&nbsp;jacob works&nbsp;</a>
     <br />
     <br />
-    <a href="talks.php">&nbsp;david speaks&nbsp;</a>
+    <a href="talks.php">&nbsp;jacob speaks&nbsp;</a>
     <br />
     <br />
-    <a href="creations.php">&nbsp;david creates&nbsp;</a>
+    <a href="creations.php">&nbsp;jacob creates&nbsp;</a>
     <br />
     <br />
-    <a href="contact.php">&nbsp;contact david&nbsp;</a>
+    <a href="contact.php">&nbsp;contact jacob&nbsp;</a>
     <br />
-    <div class="currentStatuses">
-        <b>blag.dh:</b>
-        <span id="blagLink">
-            <noscript>
-                <a href="http://huertanix.tumblr.com/">Visit Blag.dh</a>
-            </noscript>
-        </span>
-        <!-- TODO: Redo this in PHP for Lynx users...-->
-    </div>
+   
 </nav>

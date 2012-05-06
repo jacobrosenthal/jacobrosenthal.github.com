@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
 <!--
-    davidhuerta.me
-    cool story bro
-    webmaster david{at}hayst.ac
-    http://www.davidhuerta.me
     copyright (c) 2011 David Huerta. Distributed under the CDL license: http://supertunaman.com/cdl/
 -->
 <head>
-    <title>davidhuerta.me</title>
+    <title>jacobrosenthal.com</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <link rel="StyleSheet" href="default.css" type="text/css" />
+    <link rel="StyleSheet" href="overflow-touch.css" type="text/css" />
+    <script type="text/javascript" src="overflow-touch.js"></script>
+	<script src="js/patternizer.min.js"></script>
+	<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+
 </head>
     <body>
+	
+		<canvas id="bgCanvas"></canvas>
+
+		<div class="wrapper">
+		    <div class="content-wrapper">
         <?php include("header.php"); ?>
         <div class="contentContainer">
 <?php
@@ -23,7 +29,7 @@
     {
         // These be CONSTANT
         $ROBOT_CHECK = 'I am a meat popsicle';
-        $TO_ADDRESS = 'huertanix' . '@hayst.ac';
+        $TO_ADDRESS = 'jakerosenthal' . '@gmail.com';
         
         // No need to escape for bobby tables, but we do need to think of the newlines
         $sanitizedName = stripslashes(trim(htmlentities($_POST['txtContactName'])));
@@ -42,7 +48,7 @@
             && $isEmailValid)
         {
             // Maybe eventually make this a drop-down selection?
-            $subject = 'Message from ' . $sanitizedName . ' via davidhuerta.me';
+            $subject = 'Message from ' . $sanitizedName . ' via jacobrosenthal.com';
             $headers = 'From: ' . $sanitizedEmail . "\r\n"
                 . 'Reply-To: ' . $sanitizedEmail . "\r\n"
                 . 'X-Mailer: PHP/' . phpversion();
@@ -93,6 +99,68 @@
 ?>
         </div>
         <?php include("footer.php"); ?>
-        <?php include("woopra.php"); ?>
+   </div>
+   </div>
+<script>
+
+var bgCanvas = document.getElementById('bgCanvas');
+
+function render() {
+
+    bgCanvas.patternizer({
+	stripes : [ 
+	    {
+	        color: '#230423',
+	        rotation: 5,
+	        opacity: 60,
+	        mode: 'normal',
+	        width: 48,
+	        gap: 44,
+	        offset: 7
+	    },
+	    {
+	        color: '#444444',
+	        rotation: 200,
+	        opacity: 50,
+	        mode: 'normal',
+	        width: 20,
+	        gap: 16,
+	        offset: 0
+	    }
+	],
+	bg : '#000000'
+	});
+
+}
+
+// resize the canvas to the window size
+function onResize() {
+
+    // number of pixels of extra canvas drawn
+    var buffer = 100;
+
+    // if extra canvas size is less than the buffer amount
+    if (bgCanvas.width - window.innerWidth < buffer ||
+        bgCanvas.height - window.innerHeight < buffer) {
+
+        // resize the canvas to window plus double the buffer
+        bgCanvas.width = window.innerWidth + (buffer * 2);
+    	bgCanvas.height = window.innerHeight + (buffer * 2);
+
+    	render();
+    }	
+
+}
+
+function init() {
+    onResize();
+    // create a listener for resize
+    // cowboy's throttle plugin keeps this event from running hog wild
+    window.addEventListener('resize', Cowboy.throttle(200, onResize), false);
+}
+
+init();
+
+</script>
     </body>
 </html>
