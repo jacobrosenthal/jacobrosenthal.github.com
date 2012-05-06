@@ -54,22 +54,22 @@ function render() {
     bgCanvas.patternizer({
 	stripes : [ 
 	    {
-	        color: '#230423',
-	        rotation: 5,
-	        opacity: 60,
+	        color: '#101010',
+	        rotation: 2,
+	        opacity: 75,
 	        mode: 'normal',
-	        width: 48,
-	        gap: 44,
-	        offset: 7
+	        width: 5,
+	        gap: 63,
+	        offset: 0
 	    },
 	    {
-	        color: '#444444',
-	        rotation: 200,
-	        opacity: 50,
+	        color: '#2b0821',
+	        rotation: 5,
+	        opacity: 76,
 	        mode: 'normal',
-	        width: 20,
-	        gap: 16,
-	        offset: 0
+	        width: 2,
+	        gap: 31,
+	        offset: 13
 	    }
 	],
 	bg : '#000000'
