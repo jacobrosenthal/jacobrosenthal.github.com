@@ -11,7 +11,7 @@
     <script type="text/javascript" src="overflow-touch.js"></script>
 	<script src="js/patternizer.min.js"></script>
 	<script src="js/jquery.ba-throttle-debounce.min.js"></script>
-
+	<link href="http://fonts.googleapis.com/css?family=Jura&subset=latin" rel="stylesheet" type="text/css">
 </head>
 <body>
 	

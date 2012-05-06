@@ -11,13 +11,7 @@
     <script type="text/javascript" src="overflow-touch.js"></script>
 	<script src="js/patternizer.min.js"></script>
 	<script src="js/jquery.ba-throttle-debounce.min.js"></script>
-
-</head>
-    <title>jacobrosenthal.com</title>
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-    <link rel="StyleSheet" href="default.css" type="text/css" />
-    <link rel="StyleSheet" href="overflow-touch.css" type="text/css" />
-    <script type="text/javascript" src="overflow-touch.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Jura&subset=latin" rel="stylesheet" type="text/css">
 </head>
 <body>
 	

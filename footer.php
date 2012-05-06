@@ -8,4 +8,3 @@
         <a href="http://www.flickr.com/photos/jacobrosenthal">flickr</a> 
     </div>
 </footer>
-<script type="text/javascript" src="http://huertanix.tumblr.com/api/read/json?num=1&amp;callback=setLatestBlagPost"></script>
