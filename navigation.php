@@ -39,5 +39,13 @@
     <br />
     <a href="contact.php">&nbsp;contact jacob&nbsp;</a>
     <br />
-   
+	<div class="currentStatuses">
+	        <b>citizengadget.com:</b>
+	        <span id="blagLink">
+	            <noscript>
+	                <a href="http://jacobrosenthal.tumblr.com/">Visit jacobrosenthal.tumblr.com</a>
+	            </noscript>
+	        </span>
+	        <!-- TODO: Redo this in PHP for Lynx users...-->
+	    </div>
 </nav>
