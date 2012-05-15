@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!--
-    copyright (c) 2011 David Huerta. Distributed under the CDL license: http://supertunaman.com/cdl/
+    Distributed under the CDL license: http://supertunaman.com/cdl/
 -->
 <head>
     <title>jacobrosenthal.com</title>
@@ -24,20 +24,25 @@
         <?php include("navigation.php"); ?>
         <article id="verbageContainer" class="descriptionContainer">
             <h2>work experience</h2>
-            <h3>Director, HeatSync Labs; Mesa, Arizona (2009-Now)</h3>
+            <h3>Founder and CEO, Augmentous; Mesa, Arizona (2012-Now)</h3>
             <ul>
-							<li>
-								Worked with team of passionate individuals to create a nonprofit company around the idea of building a community workshop with the goal of attracting the most intelligent and creative people together by providing them the space and access to tools to prototype and manufacture their designs.
-							</li>
-			  			<li>
-							Led the 3d printing initiative developing and implementing exciting Open Source CNC robotics platforms to revolutionize manufacturing. Performed testing and analysis of stepper motor operation, motor noise, and thermal profiles. Experience with PID, linear motion, dc and stepper motors and drivers, and CAD design utilizing Sketchup and Openscad.
-			  			</li>
-              			<li>
-              				Currently researching accessible Computer Systems Engineering, bringing the engineering tools to problem solve and prototype to the blind. First product to market is an extension of the open source Arduino platform modified with braille and haptics and screen reader friendly development environment.
-              			</li>
+				<li>Working with body modification luminaries to bring body computing to reality through the body modification community.
+				</li>
+			  	<li>Developed open source electronics design including Li-ion battery protection, charging, regulation, bluetooth 4.0, amplified electret, vibration motors and ultra-bright leds in smallest possible package.
+				</li>
+          		<li>
+					Designing for scale and developing supply chain logistics for manufacturer and distribution from China and bringing to market in US first with 100 unit test run.
+       			</li>
 
             </ul>
-            <h3>Research Assistant, CUbiC; Tempe, Arizona - (2009-2010)</h3>
+            <h3>Founder and CEO, Minocu; Mesa, Arizona (2010-2011)</h3>
+            <ul>
+						<li>Created company with the aim of updating vending electronics through social theory and gamification.
+						</li>
+			  			<li>Leveraged my knowledge of mechatronics systems and microcontrollers to begin development of open source electronics to interface existing MDB protocols with popular open source platform Arduino.
+
+            </ul>
+            <h3>Technical Consultant, CUbiC; Tempe, Arizona - (2009-Now)</h3>
             <ul>
                 <li>
 					Created a team to develop distributed actuation system for delivery of vibratory patterns to the body. Performed build vs buy calculations resulting in 50% build and 50% use of open source Atmel 8bit hardware designs to bring to market ASAP. Designed and Simulated schematic prior to Layout. Sourced, Prototyped and Tested design before handing off for professional manufacture. This work is still in use and has since been adopted and extended by multiple other teams, resulted in several publications and earned a Defense Department grant.
@@ -45,6 +50,16 @@
                 <li>
 					Conceived next generation wireless sensing and actuation platform for body computing research. Faced novel challenges including power consumption of computation vs communication and the need for fully reconfigurable microcontroller profiles. Prototyped system utilizing Atmel 32bit microprocessors, Zigbee mesh wireless communication, 6DOF (accelerometers, magnetometers, and gyroscopes) for the TinyOS RTOS.
 				</li>
+            </ul>
+            <h3>Founder and Board Chair, HeatSync Labs; Mesa, Arizona (2009-Now)</h3>
+            <ul>
+							<li>
+								Worked with team of passionate individuals to create a nonprofit company around the idea of building a community workshop with the goal of attracting the most intelligent and creative people together by providing them the space and access to tools to prototype and manufacture their designs.
+							</li>
+			  			<li>
+							Led the 3d printing initiative developing and implementing exciting Open Source CNC robotics platforms to revolutionize manufacturing. Performed testing and analysis of stepper motor operation, motor noise, and thermal profiles. Experience with PID, linear motion, dc and stepper motors and drivers, and CAD design utilizing Sketchup and Openscad.
+			  			</li>
+
             </ul>
             <h3>Application Systems Analyst, Arizona State University; Tempe, Arizona - (2005-2010)</h3>
             <ul>
