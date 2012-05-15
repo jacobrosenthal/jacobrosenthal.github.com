@@ -28,10 +28,10 @@
             <ul>
 				<li>Working with body modification luminaries to bring body computing to reality through the body modification community.
 				</li>
-			  	<li>Developed open source electronics design including Li-ion battery protection, charging, regulation, bluetooth 4.0, amplified electret, vibration motors and ultra-bright leds in smallest possible package.
+			  	<li>Developed open source electronics design including Li-ion battery protection, charging, regulation, bluetooth 4.0, amplified electret microphone, vibration motors and ultra-bright LEDs in the smallest routable package.
 				</li>
           		<li>
-					Designing for scale and developing supply chain logistics for manufacturer and distribution from China and bringing to market in US first with 100 unit test run.
+					Designing for scale and developing supply chain logistics for manufacture and distribution from China and bringing to market in U.S. with 100 unit test run.
        			</li>
 
             </ul>
