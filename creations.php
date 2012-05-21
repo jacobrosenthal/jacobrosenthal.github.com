@@ -24,7 +24,12 @@
   <div class="contentContainer">
     <?php include("navigation.php"); ?>
     <article id="verbageContainer" class="descriptionContainer" onload="setIosOverlay(this.id)">
-      <h3>Interactive Cacti Grove</h3>
+      <h3>Heddatron</h3>
+			 <section class="imageContainer">
+	        <img src="images/heddatron.jpg" alt="Robot Invasion" onclick="TINY.box.show({image:'images/heddatron_large.jpg',boxid:'frameless',animate:true,openjs:function(){openJS()}})" />
+	      </section>
+			<p>I worked under my partner Tim Gerrits and with the assistance of HeatSync Labs to create five robots in under five weeks for the Arizona Premier of Heddatron by Elizabeth Meriwether. The director Ron May informed us we were the 10th attempt at Heddatron, but only the 4th to successfully open specifically because of the complexities in utilizing robotics and technology in a theater setting and schedule.</p>
+			 <h3>Interactive Cacti Grove</h3>
 			 <section class="imageContainer">
 	        <img src="images/prickly.jpg" alt="Prickly Pear and Agave cactus" onclick="TINY.box.show({image:'images/prickly_large.jpg',boxid:'frameless',animate:true,openjs:function(){openJS()}})" />
 	      </section>
