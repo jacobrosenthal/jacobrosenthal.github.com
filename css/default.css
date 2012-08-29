@@ -4,7 +4,7 @@
 
 body 
 {
-	background:#000000; /* attempt to fail to black if no canvas support*/
+	background:#000000 repeat url('../images/noise2.png'); /* attempt to fail to black if no canvas support*/
     font-family:'Jura', sans-serif;
     /*text-align:center; moved to networksContainer to fix patternizer*/
     margin: 0;

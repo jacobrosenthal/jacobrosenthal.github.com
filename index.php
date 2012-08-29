@@ -25,66 +25,6 @@
     <?php include("footer.php"); ?>
 </div>
 </div>
-<script>
 
-var bgCanvas = document.getElementById('bgCanvas');
-
-function render() {
-
-    bgCanvas.patternizer({
-	stripes : [ 
-	    {
-	        color: '#101010',
-	        rotation: 2,
-	        opacity: 75,
-	        mode: 'normal',
-	        width: 5,
-	        gap: 63,
-	        offset: 0
-	    },
-	    {
-	        color: '#2b0821',
-	        rotation: 5,
-	        opacity: 76,
-	        mode: 'normal',
-	        width: 2,
-	        gap: 31,
-	        offset: 13
-	    }
-	],
-	bg : '#000000'
-	});
-
-}
-
-// resize the canvas to the window size
-function onResize() {
-
-    // number of pixels of extra canvas drawn
-    var buffer = 100;
-
-    // if extra canvas size is less than the buffer amount
-    if (bgCanvas.width - window.innerWidth < buffer ||
-        bgCanvas.height - window.innerHeight < buffer) {
-
-        // resize the canvas to window plus double the buffer
-        bgCanvas.width = window.innerWidth + (buffer * 2);
-    	bgCanvas.height = window.innerHeight + (buffer * 2);
-
-    	render();
-    }	
-
-}
-
-function init() {
-    onResize();
-    // create a listener for resize
-    // cowboy's throttle plugin keeps this event from running hog wild
-    window.addEventListener('resize', Cowboy.throttle(200, onResize), false);
-}
-
-init();
-
-</script>
 </body>
 </html>
