@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<!--
+    copyright (c) 2011 David Huerta. Distributed under the CDL license: http://supertunaman.com/cdl/
+-->
+<head>
+	<title>jacobrosenthal.com</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<meta name="description" content="Official website of Jacob Rosenthal: HeatSync Labs director, Starcraft addict, and general purveyor of good taste." />
+<meta name="keywords" content="jacob rosenthal augmentous citizen gadget ubiquitous computing body modification hardware engineer open source heatsync labs" />
+<link rel="StyleSheet" href="css/default.css" type="text/css" />
+<script type="text/javascript" src="js/tinybox.js"></script>
+<link rel="StyleSheet" href="css/overflow-touch.css" type="text/css" />
+<script type="text/javascript" src="js/overflow-touch.js"></script>
+<script src="js/patternizer.min.js"></script>
+<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+<link href="http://fonts.googleapis.com/css?family=Jura&subset=latin" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+</head>
+<body>
+	
+	<canvas id="bgCanvas"></canvas>
+
+	<div class="wrapper">
+	    <div class="content-wrapper">
+    <header>
+    <h1><a href="index.html">jacobrosenthal</a></h1>
+</header>    <div class="contentContainer">
+        <script type="text/javascript">
+    window.setLatestBlagPost = function(tumblr_json) {
+        var title = 'Untitled';
+        
+        // Grab latest blag post headline
+        if (tumblr_json['posts'][0]['link-text'])
+        {
+            title = tumblr_json['posts'][0]['link-text'];
+        } 
+        else if (tumblr_json['posts'][0]['regular-title'])
+        {
+            title = tumblr_json['posts'][0]['regular-title'];
+        }
+        else if (tumblr_json['posts'][0]['slug'])
+        {
+            title = tumblr_json['posts'][0]['slug'];
+        }
+        else
+        {
+            title += ' ' + tumblr_json['posts'][0]['type'];
+        }
+        
+        document.getElementById('blagLink').innerHTML = '<a href="' + tumblr_json['posts'][0]['url-with-slug'] + '">&nbsp;' + title +'&nbsp;</a>';
+    }
+</script>
+
+<nav class="mainNavContainer">
+    <a href="volunteerism.html">&nbsp;jacob volunteers&nbsp;</a>
+    <br />
+    <br />
+    <a href="resume.html">&nbsp;jacob works&nbsp;</a>
+    <br />
+    <br />
+    <a href="talks.html">&nbsp;jacob speaks&nbsp;</a>
+    <br />
+    <br />
+    <a href="creations.html">&nbsp;jacob creates&nbsp;</a>
+    <br />
+    <br />
+    <a href="contact.html">&nbsp;contact jacob&nbsp;</a>
+    <br />
+	<div class="currentStatuses">
+	        <b>citizengadget.com:</b>
+	        <span id="blagLink">
+	            <noscript>
+	                <a href="http://jacobrosenthal.tumblr.com/">Visit jacobrosenthal.tumblr.com</a>
+	            </noscript>
+	        </span>
+	        <!-- TODO: Redo this in PHP for Lynx users...-->
+	    </div>
+</nav>        <article id="verbageContainer" class="descriptionContainer">
+            <h2>contact jacob</h2>
+            <p>Looking for circuit design work, have questions on hackerspaces and community, or do you need advice on your starcraft II game? Contact me with the form below:</p>
+            <form id="frmContactDavid" method="post" action="dhmailer.php">
+                <label for="contactName">Name</label>
+                <br />
+                <input name="txtContactName" type="text" placeholder="Your Name" class="fancyTextBox" />
+                <br />
+                <label for="contactEmail">Email Address</label>
+                <br />
+                <input name="txtContactEmail" type="email" placeholder="Your Email Address" class="fancyTextBox" />
+                <br />
+                <label for="contactMessage">Your Message</label>
+                <br />
+                <textarea name="txtContactMessage" type="textarea" placeholder="i liek turtles" rows="4" cols="32" class="fancyTextBox"></textarea>
+                <br />
+                <label for="contactRobotCheck"><a href="http://www.youtube.com/watch?v=aZFH4wCLVXY">Are you classified as a human</a>? (Type: "I am a meat popsicle")</label>
+                <br />
+                <input name="txtContactMeatPopsicle" type="text" placeholder="No really, type &quot;I am a meat popsicle&quot;" class="fancyTextBox" />
+                <br />
+                <input id="btnContactSubmit" type="submit" value="Send" class="fancyButton" />
+                <br />
+            </form>
+        </article>
+        <script type="text/javascript">
+            setIosOverlay('verbageContainer');
+        </script>
+        <div class="propsContainer">
+    <a href="http://www.w3.org/html/logo/">
+        <img src="images/html5logo_80px.png" />
+    </a>
+</div>    </div>
+    <footer class="networksContainer">
+    <div>
+        as seen on: 
+        <a href="http://twitter.com/jacobrosenthal">twitter</a> &bull; 
+        <a href="http://www.quora.com/Jacob-Rosenthal">quora</a> &bull; 
+        <a href="http://jacobrosenthal.tumblr.com//">tumblr</a> &bull; 
+        <a href="https://github.com/jacobrosenthal">github</a> &bull; 
+        <a href="http://www.flickr.com/photos/jacobrosenthal">flickr</a> 
+    </div>
+</footer>
+<script type="text/javascript" src="http://jacobrosenthal.tumblr.com/api/read/json?num=1&amp;callback=setLatestBlagPost"></script>   </div>
+   </div>
+<script>
+
+var bgCanvas = document.getElementById('bgCanvas');
+
+function render() {
+
+    bgCanvas.patternizer({
+	stripes : [ 
+	    {
+	        color: '#101010',
+	        rotation: 2,
+	        opacity: 75,
+	        mode: 'normal',
+	        width: 5,
+	        gap: 63,
+	        offset: 0
+	    },
+	    {
+	        color: '#2b0821',
+	        rotation: 5,
+	        opacity: 76,
+	        mode: 'normal',
+	        width: 2,
+	        gap: 31,
+	        offset: 13
+	    }
+	],
+	bg : '#000000'
+	});
+
+}
+
+// resize the canvas to the window size
+function onResize() {
+
+    // number of pixels of extra canvas drawn
+    var buffer = 100;
+
+    // if extra canvas size is less than the buffer amount
+    if (bgCanvas.width - window.innerWidth < buffer ||
+        bgCanvas.height - window.innerHeight < buffer) {
+
+        // resize the canvas to window plus double the buffer
+        bgCanvas.width = window.innerWidth + (buffer * 2);
+    	bgCanvas.height = window.innerHeight + (buffer * 2);
+
+    	render();
+    }	
+
+}
+
+function init() {
+    onResize();
+    // create a listener for resize
+    // cowboy's throttle plugin keeps this event from running hog wild
+    window.addEventListener('resize', Cowboy.throttle(200, onResize), false);
+}
+
+init();
+
+</script>
+</body>
+</html>
